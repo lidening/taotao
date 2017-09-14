@@ -9,11 +9,12 @@ import com.taotao.common.utils.HttpClientUtil;
 import com.taotao.common.utils.JsonUtils;
 import com.taotao.portal.pojo.Order;
 import com.taotao.portal.service.OrderService;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
-	@Autowired
-	private HttpClientUtil httpClientUtil;
+//	@Autowired
+//	private HttpClientUtil httpClientUtil;
 	
 	@Value("${ORDER_BASE_URL}")
 	private String ORDER_BASE_URL;
