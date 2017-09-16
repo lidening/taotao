@@ -18,7 +18,7 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	@RequestMapping(value="/create",method=RequestMethod.POST)
-	@ResponseBody
+	@ResponseBody 
 	public TaotaoResult createOrder(@RequestBody Order order){
 		try {
 			TaotaoResult result = orderService.createOrder(order, order.getOrderItems(), order.getOrderShipping());
