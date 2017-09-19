@@ -32,11 +32,12 @@ public class LoginInterceptor implements HandlerInterceptor {
 				response.sendRedirect(interceptorService.SSO_BASE_URL+interceptorService.SSO_PAGE_LOGIN+"?redirect="+request.getRequestURL());
 				return false;
 			}
+			//获取cookie中user信息，返回时添加到request中，为生成订单时添加用户信息
+			request.setAttribute("user", tbUser);
 		} catch (Exception e) {
 			e.printStackTrace();
 			TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
 		}
-		
 		return true;
 	}
 
